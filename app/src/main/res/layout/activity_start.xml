@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    tools:context=".StartActivity">
+
+    <ImageView
+        android:layout_width="493dp"
+        android:layout_height="350dp"
+        android:scaleType="fitStart"
+        android:src="@drawable/ic_getstarted" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/gilroy_medium"
+        android:text="Welcome to"
+        android:textSize="53px"
+        android:textColor="#22215B"
+        />
+
+    <ImageView
+        android:id="@+id/Logo"
+        android:layout_marginTop="-20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:src="@drawable/ic_logo"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="25dp"
+        android:fontFamily="@font/gilroy_medium"
+        android:justificationMode="inter_word"
+        android:text="Platform for your reminders and\nall of your medical needs. \n\n\nJoin For Free."
+        android:textAlignment="textStart"
+        android:fallbackLineSpacing="true"
+        android:lineSpacingExtra="5dp"
+        android:textSize="16dp"
+        android:textColor="#7B7F9E"
+        />
+
+    <Button
+        android:id="@+id/start_signIn"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:backgroundTint="#6D81EB"
+        android:text="Already a User? Sign In"
+        android:textAlignment="center"
+        android:fontFamily="@font/poppins_semibold"
+        />
+
+    <Button
+        android:id="@+id/start_register"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="25dp"
+        android:backgroundTint="#6D81EB"
+        android:text="New here? Register"
+        android:textAlignment="center"
+        android:fontFamily="@font/poppins_semibold"
+        />
+
+
+</LinearLayout>

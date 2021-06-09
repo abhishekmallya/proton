@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "271871511294",
+    "project_id": "proton-auth",
+    "storage_bucket": "proton-auth.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:271871511294:android:2d0a50413328334d5233af",
+        "android_client_info": {
+          "package_name": "com.example.proton"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "271871511294-ka28j40e7n9qjne22fcptjcll4luci29.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4dmI99kJ7xqMBAFeaCS5g7nJtG8FC22A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "271871511294-ka28j40e7n9qjne22fcptjcll4luci29.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
