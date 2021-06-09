@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/poppins_bold"
         android:text="Register"
         android:textColor="#22215B"
@@ -21,7 +21,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Please enter your details"
+        android:text="Welcome, good to see you here."
         android:textColor="#7B7f9E"
         android:fontFamily="@font/poppins_regular"
         android:layout_marginLeft="30dp"
@@ -134,6 +134,8 @@
         android:layout_height="60dp"
         app:passwordToggleEnabled="true"
         app:passwordToggleTint="#22215B"
+        android:hint="Minimum of 8 characters"
+        android:textColorHint="#DDAAAAAA"
         >
 
         <EditText
@@ -146,11 +148,53 @@
             android:layout_marginRight="30dp"
             android:background="@drawable/login_input_bg"
             android:padding="10dp"
+            android:fontFamily="@font/gilroy_light"
             android:textSize="15dp"
             android:textColor="#6D81EB"
             android:textCursorDrawable="@null"
             />
     </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CONFIRM PASSWORD"
+        android:letterSpacing="0.1"
+        android:textColor="#7B7f9E"
+        android:fontFamily="@font/poppins_regular"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="30dp"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="#22215B"
+        android:textColorHint="#DDAAAAAA"
+        >
+
+        <EditText
+            android:id="@+id/register_confirm_password"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:inputType="textPassword"
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/login_input_bg"
+            android:padding="10dp"
+            android:fontFamily="@font/gilroy_light"
+            android:textSize="15dp"
+            android:textColor="#6D81EB"
+            android:textCursorDrawable="@null"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
 
     <TextView
         android:layout_width="match_parent"
@@ -166,7 +210,7 @@
     <EditText
         android:id="@+id/register_address"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="100dp"
         android:inputType="textPostalAddress"
         android:layout_marginTop="7dp"
         android:layout_marginLeft="30dp"
@@ -183,10 +227,10 @@
         />
 
     <Button
-        android:id="@+id/login_login"
+        android:id="@+id/register_register"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:backgroundTint="#6D81EB"
