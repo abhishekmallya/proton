@@ -50,19 +50,27 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View v) {
                 /*----------------register_... changed to username------------*/
                 String username = register_username.getText().toString();
-                int contact = Integer.valueOf(register_contact.getText().toString());
+                String contact = register_contact.getText().toString();
                 String email = register_email.getText().toString();
                 String password = register_password.getText().toString();
                 String confirm_password = register_confirm_password.getText().toString();
                 String address = register_address.getText().toString();
-                if (!password.equals(confirm_password)) {
+
+
+                if(username.length() == 0 && contact.length() == 0 && email.length() == 0 && password.length() == 0 && confirm_password.length() == 0 && address.length() == 0 ){
+                    Toast.makeText(RegisterActivity.this, "No data in the form", Toast.LENGTH_SHORT).show();
+                } else if (contact.length()==0 || contact.length()<10 || contact.length()>10){
+                    Toast.makeText(RegisterActivity.this, "Contact Number Is Not Valid", Toast.LENGTH_SHORT).show();
+                } else if (!password.equals(confirm_password)) {
                     Toast.makeText(RegisterActivity.this, "Passwords Do not Match", Toast.LENGTH_SHORT).show();
                 } else if (username.length() == 0) {
                     Toast.makeText(RegisterActivity.this, "Enter a Username", Toast.LENGTH_SHORT).show();
                 } else if (email.length() == 0) {
-                    Toast.makeText(RegisterActivity.this, "Enter your email", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this, "Enter Your Email", Toast.LENGTH_SHORT).show();
                 } else if (password.length() == 0) {
-                    Toast.makeText(RegisterActivity.this, "Password field cannot be empty", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this, "Password Field Cannot Be Empty", Toast.LENGTH_SHORT).show();
+                } else if (address.length() == 0) {
+                    Toast.makeText(RegisterActivity.this, "Please Enter Your Address", Toast.LENGTH_SHORT).show();
                 } else {
                     mLoadingBar.setTitle("Status");
                     mLoadingBar.setMessage("Working On Your Registration Request");

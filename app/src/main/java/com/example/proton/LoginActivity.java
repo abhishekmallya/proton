@@ -29,7 +29,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText login_email, login_password;
     TextView login_forgot_password;
     Button login_login;
-    private FirebaseAuth mAuth;
+    FirebaseAuth fAuth;
     ProgressDialog mLoadingBar;
 
 
@@ -41,13 +41,14 @@ public class LoginActivity extends AppCompatActivity {
         login_email = findViewById(R.id.login_email);
         login_password = findViewById(R.id.login_password);
         login_login = findViewById(R.id.login_login);
+        login_forgot_password = findViewById(R.id.login_forgot_password);
 
         login_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String email = login_email.getText().toString();
                 String password = login_password.getText().toString();
-                mAuth = FirebaseAuth.getInstance();
+                fAuth = FirebaseAuth.getInstance();
                 mLoadingBar = new ProgressDialog(LoginActivity.this);
                 if (email.length() == 0 || password.length() == 0) {
                     Toast.makeText(LoginActivity.this, "Please Provide The Required Credentials", Toast.LENGTH_SHORT).show();
@@ -57,13 +58,13 @@ public class LoginActivity extends AppCompatActivity {
                     mLoadingBar.setCanceledOnTouchOutside(false);
                     mLoadingBar.show();
 
-                    mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    fAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 mLoadingBar.dismiss();
-                                Intent log_to_reg = new Intent(LoginActivity.this, RegisterActivity.class);
-                                startActivity(log_to_reg);
+                                Intent log_to_home = new Intent(LoginActivity.this, HomeActivity.class);
+                                startActivity(log_to_home);
                                 Toast.makeText(LoginActivity.this, "Welcome Back", Toast.LENGTH_SHORT).show();
                             } else {
                                 mLoadingBar.dismiss();
@@ -74,24 +75,24 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
-            login_forgot_password = findViewById(R.id.login_forgot_password);
+
             login_forgot_password.setOnClickListener(new View.OnClickListener() {
             @Override
                 public void onClick(View v) {
-                EditText reset_mail = new EditText(v.getContext());
-                AlertDialog.Builder passwordReset = new AlertDialog.Builder(v.getContext());
-                passwordReset.setTitle("Reset Password?");
-                passwordReset.setMessage("Enter your email to receive reset link");
-                passwordReset.setView(reset_mail);
+                EditText resetMail = new EditText(v.getContext());
+                AlertDialog.Builder passwordResetDialog = new AlertDialog.Builder(v.getContext());
+                passwordResetDialog.setTitle("Reset Password?");
+                passwordResetDialog.setMessage("Enter your email to receive reset link");
+                passwordResetDialog.setView(resetMail);
 
-                passwordReset.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                passwordResetDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         //extracting mail and Sending Reset Link
-                        String mail = reset_mail.getText().toString();
-                        mAuth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        String mail = resetMail.getText().toString();
+                        fAuth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
-                            public void onSuccess(Void unused) {
+                            public void onSuccess(Void aVoid) {
                                 Toast.makeText(LoginActivity.this, "Reset Link Has Been Sent To Your Email", Toast.LENGTH_SHORT).show();
                             }
                         }).addOnFailureListener(new OnFailureListener() {
@@ -103,14 +104,14 @@ public class LoginActivity extends AppCompatActivity {
 
                     }
                 });
-                passwordReset.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                passwordResetDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                             //return to login
                     }
                 });
 
-                passwordReset.create().show();
+                passwordResetDialog.create().show();
             }
         });
 
