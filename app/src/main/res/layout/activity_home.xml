@@ -1,28 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity"
-    android:background="#fff">
+    android:orientation="vertical"
+    android:background="#fff"
+    tools:context=".HomeActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="welcome"
-        android:textColor="@color/black"
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#ECEFFF"
         />
 
-    <TextView
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="165dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/ic_add_reminder_home">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reminders"
+            android:textColor="#22215B"
+            android:fontFamily="@font/poppins_semibold"
+            android:paddingStart="20dp"
+            android:paddingTop="20dp"
+            android:textSize="20dp"
+            />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/home_add_reminder"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="157dp"
-        android:layout_marginEnd="147dp"
-        android:layout_marginBottom="583dp"
-        android:text="welcome"
-        android:textColor="@color/black" />
-</RelativeLayout>
+        android:layout_height="45dp"
+        android:layout_marginTop="-60dp"
+        android:layout_marginLeft="260dp"
+        android:layout_marginRight="30dp"
+        android:backgroundTint="#6D81EB"
+        android:text="Add +"
+        android:gravity="center"
+        android:background="@drawable/custom_button"
+        android:fontFamily="@font/poppins_semibold"
+        android:textAllCaps="false"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="165dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/ic_home_shop_bg">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reminders"
+            android:textColor="#22215B"
+            android:fontFamily="@font/poppins_semibold"
+            android:paddingStart="20dp"
+            android:paddingTop="20dp"
+            android:textSize="20dp"
+            />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/home_shop"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginTop="-60dp"
+        android:layout_marginLeft="260dp"
+        android:layout_marginRight="30dp"
+        android:backgroundTint="#6D81EB"
+        android:text="Shop >"
+        android:gravity="center"
+        android:background="@drawable/custom_button"
+        android:fontFamily="@font/poppins_semibold"
+        android:textAllCaps="false"
+        />
+
+</LinearLayout>
