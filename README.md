@@ -1,3 +1,3 @@
 # proton
 
-Yet another reminder App.
+Yet another reminder App with minimalistic UI.
