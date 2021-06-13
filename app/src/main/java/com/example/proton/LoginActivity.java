@@ -92,7 +92,7 @@ public class LoginActivity extends AppCompatActivity {
                         String mail = resetMail.getText().toString();
                         fAuth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
-                            public void onSuccess(Void aVoid) {
+                            public void onSuccess(Void success) {
                                 Toast.makeText(LoginActivity.this, "Reset Link Has Been Sent To Your Email", Toast.LENGTH_SHORT).show();
                             }
                         }).addOnFailureListener(new OnFailureListener() {
