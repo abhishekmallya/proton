@@ -8,9 +8,12 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,6 +27,8 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import org.jetbrains.annotations.NotNull;
 
+import io.paperdb.Paper;
+
 public class LoginActivity extends AppCompatActivity {
 
     EditText login_email, login_password;
@@ -31,17 +36,22 @@ public class LoginActivity extends AppCompatActivity {
     Button login_login;
     FirebaseAuth fAuth;
     ProgressDialog mLoadingBar;
-
+    CheckBox login_checkbox;
+    SharedPreferences mPrefs;
+    private static final String PREFS_NAME = "PrefsFile";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
         login_email = findViewById(R.id.login_email);
         login_password = findViewById(R.id.login_password);
         login_login = findViewById(R.id.login_login);
         login_forgot_password = findViewById(R.id.login_forgot_password);
+        login_checkbox = findViewById(R.id.login_checkbox);
+        mPrefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        getPreferencesData();
+
 
         login_login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +60,18 @@ public class LoginActivity extends AppCompatActivity {
                 String password = login_password.getText().toString();
                 fAuth = FirebaseAuth.getInstance();
                 mLoadingBar = new ProgressDialog(LoginActivity.this);
+
+                if(login_checkbox.isChecked()){
+                        Boolean boolisChecked = login_checkbox.isChecked();
+                        SharedPreferences.Editor editor = mPrefs.edit();
+                        editor.putString("pref_name", login_email.getText().toString());
+                        editor.putString("pref_pass", login_password.getText().toString());
+                        editor.putBoolean("pref_check",boolisChecked);
+                        editor.apply();
+                }else{
+                        mPrefs.edit().clear().apply();
+                }
+
                 if (email.length() == 0 || password.length() == 0) {
                     Toast.makeText(LoginActivity.this, "Please Provide The Required Credentials", Toast.LENGTH_SHORT).show();
                 } else {
@@ -66,6 +88,9 @@ public class LoginActivity extends AppCompatActivity {
                                 Intent log_to_home = new Intent(LoginActivity.this, HomeActivity.class);
                                 startActivity(log_to_home);
                                 Toast.makeText(LoginActivity.this, "Welcome Back", Toast.LENGTH_SHORT).show();
+                                login_email.getText().clear();
+                                login_password.getText().clear();
+
                             } else {
                                 mLoadingBar.dismiss();
                                 Toast.makeText(LoginActivity.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
@@ -73,6 +98,7 @@ public class LoginActivity extends AppCompatActivity {
                         }
                     });
                 }
+
             }
         });
 
@@ -117,5 +143,21 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
+    }
+
+    private void getPreferencesData() {
+        SharedPreferences sp = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        if(sp.contains("pref_name")){
+            String e = sp.getString("pref_name", "not found.");
+            login_email.setText(e.toString());
+        }
+        if(sp.contains("pref_pass")){
+            String p = sp.getString("pref_pass", "not found");
+            login_password.setText(p.toString());
+        }
+        if(sp.contains("pref_check")){
+            Boolean b = sp.getBoolean("pref_check",false);
+            login_checkbox.setChecked(b);
+        }
     }
 }
