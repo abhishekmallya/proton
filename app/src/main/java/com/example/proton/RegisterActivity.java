@@ -15,6 +15,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -72,6 +74,7 @@ public class RegisterActivity extends AppCompatActivity {
                 } else if (address.length() == 0) {
                     Toast.makeText(RegisterActivity.this, "Please Enter Your Address", Toast.LENGTH_SHORT).show();
                 } else {
+                    processRegister(); // call database store method
                     mLoadingBar.setTitle("Status");
                     mLoadingBar.setMessage("Working On Your Registration Request");
                     mLoadingBar.setCanceledOnTouchOutside(false);
@@ -95,5 +98,28 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+    // Database store method
+    public void processRegister() {
+        register_username = findViewById(R.id.register_username);
+        register_contact = findViewById(R.id.register_contact);
+        register_email = findViewById(R.id.register_email);
+        register_address = findViewById(R.id.register_address);
+
+        String username = register_username.getText().toString().trim();
+        String contact = register_contact.getText().toString().trim();
+        String email = register_email.getText().toString().trim();
+        String address = register_address.getText().toString().trim();
+
+        registerdataholder obj = new registerdataholder(username,contact,email,address);
+
+        FirebaseDatabase register = FirebaseDatabase.getInstance();
+        DatabaseReference node = register.getReference("users");
+
+        node.child(username).setValue(obj);
+        register_username.setText("");
+        register_contact.setText("");
+        register_email.setText("");
+        register_address.setText("");
     }
 }
