@@ -1,6 +1,5 @@
 package com.example.proton;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
@@ -8,8 +7,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import org.jetbrains.annotations.NotNull;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -34,7 +31,7 @@ public class HomeActivity extends AppCompatActivity {
                         break;
                     case R.id.dashboard_menu_reminder: temp = new ReminderFragment();
                         break;
-                    case R.id.dashboard_menu_store: temp = new StoreFragment();
+                    case R.id.dashboard_menu_store: temp = new LocationFragment();
                         break;
                     case R.id.dashboard_menu_profile: temp = new ProfileFragment();
                 }

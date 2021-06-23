@@ -50,7 +50,7 @@ public class RegisterActivity extends AppCompatActivity {
         register_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*----------------register_... changed to username------------*/
+                /*----------------register_... assigned to respective simpler names------------*/
                 String username = register_username.getText().toString();
                 String contact = register_contact.getText().toString();
                 String email = register_email.getText().toString();
@@ -100,6 +100,7 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
     // Database store method
+
     public void processRegister() {
         register_username = findViewById(R.id.register_username);
         register_contact = findViewById(R.id.register_contact);
