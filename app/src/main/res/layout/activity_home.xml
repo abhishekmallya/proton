@@ -1,29 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity">
+    android:background="#fff"
+    android:orientation="vertical"
+    tools:context=".LoginActivity">
 
-
-    <FrameLayout
-        android:id="@+id/home_frame_container"
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/bottom_navigation_home"
-        android:background="#fff"
+        android:layout_height="250dp"
+        android:background="@drawable/ic_login_bg"
         />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation_home"
-        app:menu="@menu/dashboard_navigation_menu"
-        app:itemIconTint="#6D81EB"
+
+    <Button
+        android:id="@+id/home_reminder"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#fff"
-        android:layout_alignParentBottom="true"
-        app:itemTextColor="#6D81EB"
+        android:layout_height="130dp"
+        android:src="@drawable/ic_home_reminder_bg"
+        android:layout_gravity="center"
+        android:background="@drawable/rounded"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="Reminders"
+        android:gravity="left"
+        android:paddingTop="25dp"
+        android:paddingLeft="20dp"
+        android:textSize="22dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:textAllCaps="false"
         />
 
-</RelativeLayout>
+    <Button
+        android:id="@+id/home_location"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:src="@drawable/ic_home_reminder_bg"
+        android:layout_gravity="center"
+        android:background="@drawable/rounded"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="Location"
+        android:gravity="left"
+        android:paddingTop="25dp"
+        android:paddingLeft="20dp"
+        android:textSize="22dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:textAllCaps="false"
+        />
+
+    <Button
+        android:id="@+id/home_signout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:backgroundTint="#6D81EB"
+        android:text="Signout"
+        android:textAlignment="center"
+        android:fontFamily="@font/poppins_semibold"
+        />
+
+</LinearLayout>
