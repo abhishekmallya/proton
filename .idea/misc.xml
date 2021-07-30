@@ -3,13 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/proton/app/src/main/res/drawable/btn_background.xml" value="0.29873417721518986" />
+        <entry key="..\:/proton/app/src/main/res/drawable/ic_add_black_24dp.xml" value="0.29873417721518986" />
         <entry key="..\:/proton/app/src/main/res/drawable/rounded.xml" value="0.310126582278481" />
         <entry key="..\:/proton/app/src/main/res/drawable/roundedsearch.xml" value="0.310126582278481" />
+        <entry key="..\:/proton/app/src/main/res/layout/activity_alarm.xml" value="0.30085470085470084" />
+        <entry key="..\:/proton/app/src/main/res/layout/activity_create_event.xml" value="0.21025641025641026" />
         <entry key="..\:/proton/app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="..\:/proton/app/src/main/res/layout/activity_location.xml" value="0.30085470085470084" />
         <entry key="..\:/proton/app/src/main/res/layout/activity_login.xml" value="0.2970464135021097" />
+        <entry key="..\:/proton/app/src/main/res/layout/activity_main.xml" value="0.30085470085470084" />
+        <entry key="..\:/proton/app/src/main/res/layout/activity_notification_message.xml" value="0.21025641025641026" />
         <entry key="..\:/proton/app/src/main/res/layout/activity_register.xml" value="0.2970464135021097" />
         <entry key="..\:/proton/app/src/main/res/layout/activity_reminder.xml" value="0.30085470085470084" />
+        <entry key="..\:/proton/app/src/main/res/layout/fragment_create_task.xml" value="0.30085470085470084" />
+        <entry key="..\:/proton/app/src/main/res/layout/item_task.xml" value="0.30085470085470084" />
+        <entry key="..\:/proton/app/src/main/res/layout/listings_row.xml" value="0.21025641025641026" />
+        <entry key="..\:/proton/app/src/main/res/layout/notification_layout.xml" value="0.21025641025641026" />
       </map>
     </option>
   </component>
