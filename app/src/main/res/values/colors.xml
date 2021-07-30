@@ -13,4 +13,25 @@
     <color name="store">#FFFFFFFF</color>
     <color name="profile">#FFFFFFFF</color>
 
+    <color name="darkColorPrimary">#22215B</color>
+    <color name="darkColorPrimaryDark">#22215B</color>
+    <color name="darkCardBackground">#ffffff</color>
+    <color name="darkColorDate">#ffffff</color>
+    <color name="darkListBackground">#fff</color>
+    <color name="darkCardTitle">#ffffff</color>
+    <color name="darkDialogTitle">#22215B</color>
+    <color name="darkListEmptyTextColor">#22215B</color>
+
+    <color name="lightColorPrimary">#22215B</color>
+    <color name="lightColorPrimaryDark">#22215B</color>
+    <color name="lightCardBackground">#ffffff</color>
+    <color name="lightListBackground">#ffffff</color>
+    <color name="lightCardTitle">#6D81EB</color>
+    <color name="lightDialogTitle">#22215B</color>
+    <color name="lightListEmptyTextColor">#22215B</color>
+
+
+    <color name="colorAccent">#6D81EB</color>
+    <color name="dialogDateColor">#22215B</color>
+
 </resources>

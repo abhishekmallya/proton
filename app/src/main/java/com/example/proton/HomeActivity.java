@@ -24,13 +24,13 @@ public class HomeActivity extends AppCompatActivity {
         home_signout = findViewById(R.id.home_signout);
         home_loc = findViewById(R.id.home_location);
 
-//        home_rem.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent home_to_ala = new Intent(HomeActivity.this, AlarmActivity.class);
-//                startActivity(home_to_ala);
-//            }
-//        });
+        home_rem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent home_to_rem = new Intent(HomeActivity.this, ReminderActivity.class);
+                startActivity(home_to_rem);
+            }
+        });
 
         home_loc.setOnClickListener(new View.OnClickListener() {
             @Override

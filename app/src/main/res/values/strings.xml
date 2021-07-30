@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">Proton</string>
+    <string name="listEmptyText">
+        <![CDATA[
+<p><b>No Reminders Yet.</b><br> You can create new Reminder <br>using  + button</p>
+]]>
+</string>
     <string name="title_activity_register2">RegisterActivity2</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -12,4 +17,11 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="google_map_key">AIzaSyB_qsP8AOP_P0MdlPz-48TDaJYjTP3vbjo</string>
+    <string name="actionBarTitle"></string>
+    <string name="editTaskHint">Add Medication Details</string>
+    <string name="dialogDate">Date</string>
+    <string name="dialogTime">Time</string>
+    <string name="cardTitle">Title</string>
+    <string name="cardDate">sub title</string>
+    <string name="cardTime">sub title</string>
 </resources>
